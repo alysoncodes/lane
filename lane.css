@@ -1,0 +1,606 @@
+/*------------------------------------
+ *   VARIABLES
+ *------------------------------------*/
+
+/**GLOBAL COLORS**/
+
+
+/**BREAKPOINTS**/
+
+@maxBP: 1649px;
+@deskBP: 768px;
+@mBP: 767px;
+
+
+/**OTHER VARIABLES**/
+
+@mobile:~"only screen and (max-width: 767px)";
+@desktop:~"only screen and (min-width: 768px)";
+@tablet: ~"only screen and (max-width: 1024px) and (min-width:768px)";
+@desktopXL: ~"only screen and (min-width: 1649px)"; 
+
+
+/*------------------------------------
+ *   MIXINS
+ *------------------------------------*/
+
+.headfont {
+
+}
+
+.buttonfont {
+    
+}
+/*------------------------------------
+ *   CUSTOM FONTS
+ *------------------------------------*/
+
+@font-face {
+font-family: 'woodland';
+src: url('https://static1.squarespace.com/static/652705c077d3c33728f17a4e/t/65382a3dc990c333f6d57dab/1698179645082/PPWoodland-Regular.woff') format('woff'), url('https://static1.squarespace.com/static/652705c077d3c33728f17a4e/t/65382a42250e3e2c162f57c7/1698179650277/PPWoodland-Regular.woff2') format('woff2');
+}
+
+
+@font-face {
+font-family: 'glacial reg';
+src: url('https://static1.squarespace.com/static/652705c077d3c33728f17a4e/t/65382a3410a40700d66d9e6b/1698179636798/GlacialIndifference-Regular.woff') format('woff');
+}
+
+@font-face {
+font-family: 'glacial bold';
+src: url('https://static1.squarespace.com/static/652705c077d3c33728f17a4e/t/65382a302ef90e43ccbc7299/1698179632218/GlacialIndifference-Bold.woff')  format('woff');
+}
+
+
+
+/*------------------------------------
+ *   GLOBAL STYLES
+ *------------------------------------*/
+.sticky{
+  top: 0 !important;
+  position: sticky !important;
+}
+
+
+//aligning text on mobile
+@media @mobile {
+ .sqs-block-content p, h1, h2, h3, h4{
+  text-align:center !important;
+ }
+  .sqs-block-button-container--left {
+display:block !important;
+}
+}
+
+//keyframes
+
+
+@keyframes RotateLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.full-width {
+.fluid-engine {
+  --sqs-site-max-width:100vw;
+
+  --sqs-site-gutter:0vw;
+
+}
+}
+
+html {
+  --scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+body.sqs-edit-mode-active {
+  #sections .page-section {
+    position:relative !important;
+  }
+
+}
+
+
+.page-section:not(.user-items-list-section):not(.content-collection)>.content-wrapper {
+    box-sizing: border-box !important;
+    position: static !important
+}
+body:not(.sqs-edit-mode) {
+.sqs-row {
+ position:static !important
+}
+}
+
+a {
+  background-size:0px !important;
+  text-decoration:none !important;
+}
+
+
+
+/*------------------------------------
+ *   fonts
+ *------------------------------------*/
+h1, h2{
+  font-family: 'woodland' !important;
+  letter-spacing: -.1rem;
+}
+
+h3{
+  font-family: 'glacial reg' !important;
+  
+}
+
+h4{
+  font-family: 'glacial reg' !important;
+  text-transform: uppercase!important;
+  letter-spacing: .15rem;
+}
+p.sqsrte-large{
+  text-transform: uppercase!important;
+  letter-spacing: .2em;
+  font-weight: 400 !important;
+  font-family: 'glacial bold' !important;
+}
+
+//nav font
+.header-nav-item{
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  font-size: 1rem;
+  font-family: 'glacial bold' !important;
+}
+
+//primary button styles
+.sqs-button-element--primary{
+  background-color: #A3582C !important;
+  font-family: 'glacial bold' !important;
+  text-transform: uppercase !important;
+  letter-spacing: .1rem !important;
+  color: #F4F0EA !important;
+}
+//secondary button styles
+.sqs-button-element--secondary{
+  background-color: #D1B17D !important;
+  font-family: 'glacial bold' !important;
+  text-transform: uppercase !important;
+  letter-spacing: .1rem !important;
+  color: #403D1A !important;
+}
+//unhide if I want to globally remove margins
+/*
+h1,h2,h3 {
+ margin:0em !important;
+}
+*/
+
+
+//section themes
+
+/*------------------------------------
+ *  DARK 1
+ *------------------------------------*/
+
+
+
+
+
+/*------------------------------------
+ *  HEADER
+ *------------------------------------*/
+
+
+
+
+//making social icons white
+
+.header .header-actions .icon--fill svg{
+  fill: #A3582C !important;
+}
+/*------------------------------------
+ *  FOOTER
+ *------------------------------------*/
+h2.newsletter-form-header-title{
+  font-family: 'glacial reg'!important;
+  text-transform: uppercase !important;
+  
+}
+.newsletter-form .newsletter-form-header-title{
+  font-size: 1.4rem !important;
+  letter-spacing: .1rem;
+}
+//rotate logo
+
+#block-yui_3_17_2_1_1694622058438_6257{
+  img{
+    animation: RotateLogo 20s linear infinite;
+
+  }
+}
+//mobile styling for subscription
+
+@media @mobile{
+  .newsletter-block .newsletter-form-wrapper--alignLeft .newsletter-form {
+    text-align: center !important;
+  }
+}
+
+/*------------------------------------
+ *  HOME
+ *------------------------------------*/
+//video fill
+
+/** Fluid Video Block**/
+
+
+.video-block {
+  .sqs-native-video .native-video-player {
+    padding-top: 0 !important;
+  }
+
+  .video-player .plyr__poster {
+    object-fit:cover !important;
+    background-size:cover !important;
+  }
+  
+  .video-player .plyr video {
+  object-fit: cover !important;
+}
+  .embed-block-wrapper {
+    height: 100% !important;
+  }
+  .intrinsic {
+    height: 100% !important;
+  }
+
+  .sqs-block-content {
+    height: 100% !important;
+  }
+
+  .sqs-native-video {
+    height: 100% !important;
+  }
+  
+  
+}
+#block-yui_3_17_2_1_1700357695723_27220 img{
+  animation: RotateLogo 30s linear infinite;}
+
+
+#block-yui_3_17_2_1_1700357695723_112323{
+.summary-block-header{
+  font-family: 'woodland'!important;
+  font-size: 4.5rem !important;
+}
+.summary-header-text{
+  font-size: 4rem !important;
+}
+  .summary-title{
+    font-family: 'glacial reg';
+    text-transform: uppercase;
+    letter-spacing: .1rem !important;
+  }
+}
+
+/**
+//testimonial section
+
+
+
+/**CENTERED CAROUSEL ARROWS**/
+
+section.black {
+  .sqs-gallery-design-carousel
+   {
+     
+     a.summary-title-link{
+       font-size: 2rem;
+       line-height: 2.5rem;
+     }
+     div.summary-title{
+       padding-bottom: 2rem !important;
+     }
+
+   @media @desktop {
+
+  .sqs-gallery-controls .previous{
+    text-align:center;
+    position:absolute;
+    left:-25%;
+    width:5em;
+    top:50%;
+    transform:translateY(-50%);
+    margin-right: 0px!important;
+  }
+
+  .sqs-gallery-controls .sqs-disabled {
+    opacity:1;
+  }
+
+.sqs-gallery-controls .previous::after{
+  content: '';
+  //background-color: red;
+  background: url('https://static1.squarespace.com/static/63b30ec8d86cc20dd14fa152/t/63f80ee1c19cb65e88e49f36/1677201121111/left+arrow.png');
+  display: block;
+  background-repeat: no-repeat !important;
+  bottom: 0;
+  background-size: contain !important;
+  width: 130px;
+  height: 10px;
+  background-position: left;
+  text-align:left;
+  }
+ /*.sqs-gallery-controls .previous:hover{
+    cursor:pointer;
+  }
+ .sqs-gallery-controls .previous:hover::before{
+    color:black!important;
+     }/**change color upon hover**/
+
+  
+.sqs-gallery-controls .previous::Before{
+  content: '';
+  background-repeat: no-repeat !important;
+  bottom: 0;
+  background-size: contain !important;
+  width: 6rem;
+  background-position: left;
+  text-align:center;
+  //background-color: red;
+  padding-bottom: .5em;
+  }
+
+
+ .sqs-gallery-controls .next{
+   text-align:right;
+   right:-20%;
+   position:absolute;
+   width:5em;
+   top:50%;
+   transform:translateY(-50%);
+  }
+
+
+  .sqs-gallery-controls .next::before{
+  
+  content: '';
+  width: 6rem;
+  background-repeat: no-repeat !important;
+  bottom: 0;
+  background-size: contain !important;
+  width: 6rem;
+  background-position: right !important;
+  text-align:right;
+  }
+     
+.sqs-gallery-controls .next::after{
+  content: '';
+  //background-color: red;
+  background: url('https://static1.squarespace.com/static/63b30ec8d86cc20dd14fa152/t/63f80edb36f9364adde9ff3b/1677201115373/right+arrow.png');
+  display: block;
+  background-repeat: no-repeat !important;
+  bottom: 0;
+  background-size: contain !important;
+  width: 130px;
+  height: 10px;
+  background-position: right;
+  text-align:right;
+  }
+ }   
+  /** .sqs-gallery-controls .next:hover{
+    cursor:pointer;
+  }
+  .sqs-gallery-controls .next:hover::before{
+    color:black!important;
+}
+*/
+  .sqs-gallery-controls .previous:focus, .sqs-gallery-controls .next:focus {
+outline-width:0 !important;
+}
+/**MOBILE CODE**/
+
+  @media @mobile{
+    .sqs-gallery-controls .previous{
+    transform:translateY(-50%);
+    position:absolute;
+    margin:0px;
+    left:20%;
+    bottom:0%;
+    text-align:center;
+  }
+  .sqs-gallery-controls .sqs-disabled {
+    opacity:1;
+  }
+.sqs-gallery-controls .previous::before{
+  content:'\2190';
+  color:white!important;
+  font-size: 1.5em;
+  width: 2em;
+  }
+
+  
+ .sqs-gallery-controls .next{
+    transform:translateY(-50%);
+    position:absolute;
+    margin:0px;
+    right:20%;
+    bottom:0%;
+    text-align:center;
+  }
+  .sqs-gallery-controls .next::before{
+  content:'\2192';
+  color:white!important;
+  font-size: 1.5em;
+  width: 2em;
+  }
+  
+  }
+     
+     /* TABLET */
+     @media @tablet{
+      .sqs-gallery-controls .previous{
+    text-align:center;
+    position:absolute;
+    left:-25%;
+    width:5em;
+    top:50%;
+    transform:translateY(-50%);
+    margin-right: 0px!important;
+  }
+
+  .sqs-gallery-controls .sqs-disabled {
+    opacity:1;
+  }
+
+.sqs-gallery-controls .previous::after{
+  content: '';
+  //background-color: red;
+  background: url('https://static1.squarespace.com/static/63b30ec8d86cc20dd14fa152/t/63f80ee1c19cb65e88e49f36/1677201121111/left+arrow.png');
+  display: block;
+  background-repeat: no-repeat !important;
+  bottom: 0;
+  background-size: contain !important;
+  width: 130px;
+  height: 10px;
+  background-position: left;
+  text-align:left;
+  }
+ /*.sqs-gallery-controls .previous:hover{
+    cursor:pointer;
+  }
+ .sqs-gallery-controls .previous:hover::before{
+    color:black!important;
+     }/**change color upon hover**/
+
+  
+.sqs-gallery-controls .previous::Before{
+  content: '';
+  font-family: 'essential';
+  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: .09em;
+  background-repeat: no-repeat !important;
+  bottom: 0;
+  background-size: contain !important;
+  width: 6rem;
+  background-position: left;
+  text-align:center;
+  //background-color: red;
+  padding-bottom: .5em;
+  }
+
+
+ .sqs-gallery-controls .next{
+   text-align:right;
+   right:-20%;
+   position:absolute;
+   width:5em;
+   top:50%;
+   transform:translateY(-50%);
+  }
+
+
+  .sqs-gallery-controls .next::before{
+  
+    content: '';
+  //background-color: red;
+    padding-bottom: .5em;
+  font-family: 'essential';
+  text-transform: uppercase;
+  font-weight: normal;
+  //line-height: 2rem !important;
+  letter-spacing: .09em;
+  color:white!important;
+  width: 6rem;
+  background-repeat: no-repeat !important;
+  bottom: 0;
+  background-size: contain !important;
+  width: 6rem;
+  background-position: right !important;
+  text-align:right;
+  }
+     
+.sqs-gallery-controls .next::after{
+  content: '';
+  //background-color: red;
+  background: url('https://static1.squarespace.com/static/63b30ec8d86cc20dd14fa152/t/63f80edb36f9364adde9ff3b/1677201115373/right+arrow.png');
+  display: block;
+  background-repeat: no-repeat !important;
+  bottom: 0;
+  background-size: contain !important;
+  width: 130px;
+  height: 10px;
+  background-position: right;
+  text-align:right;
+  }
+ }   
+     
+     
+     
+  }
+}
+@media @desktop{
+  .summary-excerpt.summary-excerpt-only p{
+    font-size: 1.2rem;
+  }
+
+}
+
+/*------------------------------------
+ *  COntact
+ *------------------------------------*/
+
+
+
+//form button
+
+.form-button-wrapper .sqs-system-button{
+  font-family: 'acumin-pro-wide' !important;
+  text-transform: uppercase !important;
+ 
+  
+}
+
+/*------------------------------------
+ *  Blog
+ *------------------------------------*/
+.archive-group-name-link {
+  background-color: #403D1A;
+  color: white;
+  font-family: 'glacial reg';
+  text-transform: uppercase;
+  font-size: .9rem;
+  letter-spacing: .1rem;
+  padding: .6rem 1rem !important;
+}
+
+/*------------------------------------
+ *  Course
+ *------------------------------------*/
+div.Marquee h1 {
+  font-family: 'glacial reg' !important;
+  font-size: 1.1rem!important;
+  text-transform: uppercase !important;
+  letter-spacing: .1rem !important;
+  color: white !important;
+}
+
+@media @desktop{
+  #block-1973d044984f815fef37{
+    margin-top: -15vw;
+  }
+}
+
+#block-yui_3_17_2_1_1703274073535_75840{
+  img{
+    animation: RotateLogo 20s linear infinite;
+
+  }
+}
