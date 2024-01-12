@@ -56,10 +56,11 @@ src: url('https://static1.squarespace.com/static/652705c077d3c33728f17a4e/t/6538
 /*------------------------------------
  *   GLOBAL STYLES
  *------------------------------------*/
-.sticky{
+@media @desktop {
+  .sticky{
   top: 0 !important;
   position: sticky !important;
-}
+  }}
 
 
 //aligning text on mobile
@@ -231,7 +232,20 @@ h2.newsletter-form-header-title{
     text-align: center !important;
   }
 }
+//social icons in footer
 
+@media @mobile{
+.sqs-svg-icon--list{
+  text-align: center!important;
+  }}
+
+@media @mobile{
+  #block-yui_3_17_2_1_1703272830634_2818{
+    p{
+      font-size: .6rem;
+    }
+  }
+}
 /*------------------------------------
  *  HOME
  *------------------------------------*/
@@ -562,8 +576,10 @@ outline-width:0 !important;
 //form button
 
 .form-button-wrapper .sqs-system-button{
-  font-family: 'acumin-pro-wide' !important;
+  font-family: 'glacial bold' !important;
   text-transform: uppercase !important;
+  letter-spacing: .1rem !important;
+  
  
   
 }
@@ -579,6 +595,21 @@ outline-width:0 !important;
   font-size: .9rem;
   letter-spacing: .1rem;
   padding: .6rem 1rem !important;
+}
+
+.mobile-filter-trigger{
+  font-family: 'glacial reg';
+  text-align: center!important;
+}
+.cf-mobile-panel-align-left .mobile-filter-trigger{
+  align-self: center !important;
+}
+
+//post pagination
+
+h2.item-pagination-title{
+  font-family: 'glacial reg' !important;
+  color: #A3582C !important;
 }
 
 /*------------------------------------
@@ -603,4 +634,76 @@ div.Marquee h1 {
     animation: RotateLogo 20s linear infinite;
 
   }
+}
+
+/*------------------------------------
+ *  About
+ *------------------------------------*/
+//team section
+
+.user-items-list-carousel__slides-revealer {
+    max-width: 403px !important;
+    translate: -50%;
+    position:relative;
+    left:50%;
+}
+
+li .user-items-list-carousel__media-container {
+  scale:0.7;  
+    transition: 0.5s;
+
+}
+li[style="transform: translate3d(0px, 0px, 0px);"] .user-items-list-carousel__media-container{
+    scale:1;
+
+}
+.user-items-list-carousel__slides .list-item-content {
+  position:absolute;
+  bottom:10%;
+  left:50%;
+  translate:-50%;
+}
+.user-items-list-carousel__slides li:not([style="transform: translate3d(0px, 0px, 0px);"]) .list-item-content {
+  opacity:0; 
+}
+
+.user-items-list-carousel__media-container {
+  //border-radius:30px;
+  //overflow:hidden;
+  //border:2px solid;
+}
+
+ .user-items-list-carousel__arrow-positioner {
+    height: 80% !important;
+    padding-bottom: 0 !important;
+}
+.user-items-list-carousel__slides li[style="transform: translate3d(0px, 0px, 0px);"] {
+    z-index:2;
+}
+li:not([style="transform: translate3d(0px, 0px, 0px);"]) .user-items-list-carousel__media-container {
+  transform-origin:left;
+  translate:-10%;
+}
+
+li[style*="-"] .user-items-list-carousel__media-container {
+  transform-origin:right;
+  translate:10%;
+  z-index:-1;
+  
+}
+ .user-items-list-carousel__slideshow-holder {
+  overflow:hidden !important;
+  max-width:1000px !important;
+}
+
+section[data-section-id="65a061e6ad5cdc00aa7f6227"] .user-items-list{
+  padding-top: 5vmax !important;
+  padding-bottom: 1vmax !important;
+}
+
+//portfolio case study sections
+
+
+.collection-type-portfolio-index-background{
+  display: none !important;
 }
